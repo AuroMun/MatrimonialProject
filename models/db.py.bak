@@ -49,6 +49,8 @@ auth.settings.extra_fields['auth_user']= [
   Field('city', 'string'),
   Field('zip', 'string'),
   Field('phone', 'string')]
+#db.auth.auth_user.city.requires = IS_NOT_EMPTY()
+auth.settings.actions_disabled.append('register')
 service = Service()
 plugins = PluginManager()
 

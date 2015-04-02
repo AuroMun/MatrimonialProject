@@ -23,6 +23,13 @@ def index():
         response.flash("Registered!")
     return dict(message=T('Hello World'), form=form)
 
+def view_users():
+    dic = db(db.auth_user).select()
+    return dict(dic = dic)
+
+def view_user():
+    user = db(db.auth_user.last_name == request.args[0]).select()
+    return dict(user = user)
 
 def user():
     """
