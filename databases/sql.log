@@ -53,3 +53,22 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2015-04-01T18:53:36.111000
+CREATE TABLE users(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT
+);
+success!
+timestamp: 2015-04-01T18:54:47.072000
+ALTER TABLE users ADD password CHAR(512);
+success!
+success!
+timestamp: 2015-04-02T17:23:25.787000
+ALTER TABLE auth_user ADD city CHAR(512);
+timestamp: 2015-04-02T17:23:25.950000
+ALTER TABLE auth_user ADD zip CHAR(512);
+timestamp: 2015-04-02T17:23:26.085000
+ALTER TABLE auth_user ADD phone CHAR(512);
+timestamp: 2015-04-02T17:23:26.193000
+ALTER TABLE auth_user ADD address CHAR(512);
+success!
