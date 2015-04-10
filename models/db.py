@@ -40,17 +40,31 @@ response.generic_patterns = ['*'] if request.is_local else []
 ## - old style crud actions
 ## (more options discussed in gluon/tools.py)
 #########################################################################
-
+from gluon.tools import Crud
+crud = Crud(db)
 from gluon.tools import Auth, Service, PluginManager
 
 auth = Auth(db)
 auth.settings.extra_fields['auth_user']= [
-  Field('address', 'string'),
-  Field('city', 'string'),
-  Field('zip', 'string'),
-  Field('phone', 'string')]
+  Field('sex',requires=IS_IN_SET(['Male','Female','Other'])),
+  Field('address', 'string',requires = IS_NOT_EMPTY()),
+  Field('city', 'string',requires = IS_NOT_EMPTY()),
+  Field('zip', 'string',requires = IS_NOT_EMPTY()),
+  Field('phone', 'string',requires = IS_NOT_EMPTY()),
+  Field('photo','upload',uploadfield="myblob",requires = IS_NOT_EMPTY()),
+  Field('myblob','blob',required = IS_NOT_EMPTY()),
+  Field('age',requires = IS_NOT_EMPTY()),
+  Field('salary',requires = IS_NOT_EMPTY()),
+  Field('About_Myself','text')]
 #db.auth.auth_user.city.requires = IS_NOT_EMPTY()
 #auth.settings.actions_disabled.append('register')
+
+db.define_table('find', 
+                Field('sex',requires=IS_IN_SET(['Male','Female','Other'])),
+                Field('minimum_age'),
+                Field('maximum_age'),
+                Field('minimum_salary'))
+
 service = Service()
 plugins = PluginManager()
 

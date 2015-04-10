@@ -23,6 +23,21 @@ def index():
         response.flash("Registered!")
     return dict(message=T('Hello World'), form=form)
 
+def search():
+    form = crud.create(db.find)
+    if(form.process().accepted):
+        redirect(URL('default','result',vars=form.vars))
+    return dict(form=form)
+
+def result():
+    q1 = db.auth_user.sex==request.vars.sex
+    amin = db.auth_user.age > request.vars.minimum_age
+    amax = db.auth_user.age < request.vars.maximum_age
+    sal = db.auth_user.salary > request.vars.minimum_salary
+    rows=db(q1 & amin & amax & sal).select(db.auth_user.first_name, db.auth_user.last_name, db.auth_user.age, db.auth_user.salary)
+    return dict(rows=rows)
+    #return dict(sex=request.vars.sex)
+    
 def view_users():
     dic = db(db.auth_user).select()
     return dict(dic = dic)
