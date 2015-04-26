@@ -24,13 +24,13 @@ def index():
         response.flash("Registered!")
     return dict(message=T('Hello World'), form=form)
     """
-    form=auth()
     """
     if request.args(0)=='login':
         if form.process().accepted:
             redirect(URL('search'))
     """
-    return dict(form=form)
+    if auth.user: redirect(URL('user/profile'))
+    return dict(form=auth())
 
 @auth.requires_login()
 def search():
@@ -53,9 +53,34 @@ def view_users():
     dic = db(db.auth_user).select()
     return dict(dic = dic)
 
+@auth.requires_login()
 def view_user():
     user = db(db.auth_user.last_name == request.args[0]).select()
     return dict(user = user)
+
+def message():
+    db.messages.me.default=auth.user.last_name
+    db.messages.dest.default=request.args[0]
+    db.messages.sent_on.default=request.now
+    form=crud.create(db.messages)
+    q1=db.messages.me==auth.user.last_name
+    q2=db.messages.dest==request.args[0]
+    q3=db.messages.me==request.args[0]
+    q4=db.messages.dest==auth.user.last_name
+    prev=db(q1&q2 | q3&q4).select(orderby=db.messages.sent_on,limitby=(0,10))
+    return locals()
+
+@auth.requires_login()
+def inbox():
+    q1=db.messages.dest==auth.user.last_name
+    one=db(q1).select(db.messages.me,distinct=True,orderby=db.messages.sent_on)
+    return locals()
+
+@auth.requires_login()
+def outbox():
+    q1=db.messages.me==auth.user.last_name
+    one=db(q1).select(db.messages.dest,distinct=True,orderby=db.messages.sent_on)
+    return locals()
 
 def user():
     """
@@ -97,7 +122,7 @@ def register():
     form = SQLFORM(db.users);
     return dict(form = form)
 
-@auth.requires_login() 
+@auth.requires_login()
 def api():
     """
     this is example of API with access control

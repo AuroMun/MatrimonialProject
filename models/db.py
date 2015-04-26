@@ -65,6 +65,12 @@ db.define_table('find',
                 Field('maximum_age'),
                 Field('minimum_salary'))
 
+db.define_table('messages',
+                Field('me',readable=False,writable=False),
+                Field('dest',readable=False,writable=False),
+                Field('sent_on','datetime',readable=False,writable=False),
+                Field('body','text'))
+
 service = Service()
 plugins = PluginManager()
 

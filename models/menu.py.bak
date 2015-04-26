@@ -21,9 +21,13 @@ response.google_analytics_id = None
 #########################################################################
 ## this is the main application menu add/remove items as required
 #########################################################################
-
+"""
 response.menu = [
     (T('Home'), False, URL('default', 'user'), [])
+]
+"""
+response.menu = [
+    (T('Profile'),False, URL('default', 'user/profile'),[])
 ]
 
 response.menu += [
@@ -31,8 +35,12 @@ response.menu += [
 ]
 
 response.menu += [
-    (T('Profile'),False, URL('default', 'user/profile'),[])
-    ]
+    (T('Inbox'),False, URL('default', 'inbox'),[])
+]
+
+response.menu += [
+    (T('Inbox'),False, URL('default', 'outbox'),[])
+]
 
 DEVELOPMENT_MENU = False
 

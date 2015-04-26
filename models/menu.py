@@ -34,6 +34,14 @@ response.menu += [
     (T('Search'),False, URL('default', 'search'),[])
 ]
 
+response.menu += [
+    (T('Inbox'),False, URL('default', 'inbox'),[])
+]
+
+response.menu += [
+    (T('Outbox'),False, URL('default', 'outbox'),[])
+]
+
 DEVELOPMENT_MENU = False
 
 #########################################################################

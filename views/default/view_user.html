@@ -2,7 +2,7 @@
 {{for i in user :}}
 <table>
 <tr>
-    <td>
+    <td style="width:50%">
         <div>
         <img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:50%"></td>
     </div>
@@ -17,7 +17,7 @@ City: {{=i.city}} </br> </br>
 Age: {{=i.age}} </br> </br>
 Salary: {{=i.salary}} </br> </br>
 About Me: {{=i.About_Myself}} </br> </br>
-<button onclick='window.location="{{=URL('default','message')}}"'>
+<button onclick='window.location="{{=URL('default','message',args=[i.last_name])}}"'>
     Message
 </button>
 </div>

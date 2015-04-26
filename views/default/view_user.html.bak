@@ -1,9 +1,8 @@
 {{extend 'layout.html'}}
-{{=BEAUTIFY(response._vars)}}
 {{for i in user :}}
 <table>
 <tr>
-    <td>
+    <td style="width:50%">
         <div>
         <img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:50%"></td>
     </div>

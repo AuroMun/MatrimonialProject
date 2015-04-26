@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+<table>
+    {{for i in one:}}
+    <tr>
+        <td style="width:50%">{{=i.dest}}</td>
+        <td style="width:50%"><button onclick='window.location="{{=URL('default','message',args=[i.dest])}}"'>
+        view
+        </button></td>
+    </tr>
+    {{pass}}
+</table>
