@@ -1,2 +1,25 @@
 {{extend 'layout.html'}}
+<!--
 {{=SQLTABLE(rows)}}
+-->
+<style>
+tr.spaceUnder > td {
+   padding-bottom:1em;
+}
+</style>
+<table style="font-size:200%; width:60%">
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Age</td>
+        <td>salary</td>
+    </tr>
+    {{for i in rows:}}
+<tr>
+    <td><a href="{{=URL('default','view_user',args=[i.last_name])}}">{{=i.first_name}}</a></td>
+    <td><a href="{{=URL('default','view_user',args=[i.last_name])}}">{{=i.last_name}}</a></td>
+    <td>{{=i.age}}</td>
+    <td>{{=i.salary}}</td>
+</tr>
+    {{pass}}
+</table>
