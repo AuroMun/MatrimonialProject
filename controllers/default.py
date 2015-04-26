@@ -17,18 +17,29 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
+    """
     response.flash = T("Welcome to web2py!")
     form = SQLFORM(db.users)
     if form.process().accepted:
         response.flash("Registered!")
     return dict(message=T('Hello World'), form=form)
+    """
+    form=auth()
+    """
+    if request.args(0)=='login':
+        if form.process().accepted:
+            redirect(URL('search'))
+    """
+    return dict(form=form)
 
+@auth.requires_login()
 def search():
     form = crud.create(db.find)
     if(form.process().accepted):
         redirect(URL('default','result',vars=form.vars))
     return dict(form=form)
 
+@auth.requires_login()
 def result():
     q1 = db.auth_user.sex==request.vars.sex
     amin = db.auth_user.age > request.vars.minimum_age

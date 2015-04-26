@@ -1,0 +1,28 @@
+{{extend 'layout.html'}}
+{{=BEAUTIFY(response._vars)}}
+{{for i in user :}}
+<table>
+<tr>
+    <td>
+        <div>
+        <img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:50%"></td>
+    </div>
+    </td>
+    <td>
+<div style="font-size:200%">
+First Name: {{=i.first_name}} </br> </br>
+Last Name: {{=i.last_name}} </br> </br>
+Email: {{=i.email}} </br> </br>
+Sex: {{=i.sex}} </br> </br>
+City: {{=i.city}} </br> </br>
+Age: {{=i.age}} </br> </br>
+Salary: {{=i.salary}} </br> </br>
+About Me: {{=i.About_Myself}} </br> </br>
+<button onclick='window.location="{{=URL('default','message')}}"'>
+    Message
+</button>
+</div>
+</td>
+</tr>
+</table>
+{{pass}}

@@ -21,17 +21,24 @@ response.google_analytics_id = None
 #########################################################################
 ## this is the main application menu add/remove items as required
 #########################################################################
-
+"""
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [])
+    (T('Home'), False, URL('default', 'user'), [])
+]
+"""
+response.menu = [
+    (T('Profile'),False, URL('default', 'user/profile'),[])
 ]
 
-DEVELOPMENT_MENU = True
+response.menu += [
+    (T('Search'),False, URL('default', 'search'),[])
+]
+
+DEVELOPMENT_MENU = False
 
 #########################################################################
 ## provide shortcuts for development. remove in production
 #########################################################################
-
 def _():
     # shortcuts
     app = request.application
@@ -134,6 +141,7 @@ def _():
                         ])
                 ]
          )]
+         
 if DEVELOPMENT_MENU: _()
 
-if "auth" in locals(): auth.wikimenu() 
+if "auth" in locals(): auth.wikimenu()

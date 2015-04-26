@@ -104,7 +104,7 @@ use_janrain(auth, filename='private/janrain.key')
 ## >>> rows=db(db.mytable.myfield=='value').select(db.mytable.ALL)
 ## >>> for row in rows: print row.id, row.myfield
 #########################################################################
-db.define_table('users', Field('username', 'string'), Field('password', 'password'))
-db.users.username.requires = IS_NOT_IN_DB(db.users, 'db.users.username')
+#db.define_table('users', Field('username', 'string'), Field('password', 'password'))
+#db.users.username.requires = IS_NOT_IN_DB(db.users, 'db.users.username')
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)

@@ -52,7 +52,7 @@ auth.settings.extra_fields['auth_user']= [
   Field('zip', 'string',requires = IS_NOT_EMPTY()),
   Field('phone', 'string',requires = IS_NOT_EMPTY()),
   Field('photo','upload',uploadfield="myblob",requires = IS_NOT_EMPTY()),
-  Field('myblob','blob',default=''),
+  Field('myblob','blob',required = IS_NOT_EMPTY()),
   Field('age',requires = IS_NOT_EMPTY()),
   Field('salary',requires = IS_NOT_EMPTY()),
   Field('About_Myself','text')]
