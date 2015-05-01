@@ -7,6 +7,10 @@ tr.spaceUnder > td {
    padding-bottom:1em;
 }
 </style>
+    {{=len(rows)}}
+    {{if len(rows)==0:}}
+    {{=redirect(URL('notfound.html'))}}
+
 <table style="font-size:200%; width:60%">
     <tr class="spaceUnder">
         <td>First Name</td>
@@ -14,6 +18,8 @@ tr.spaceUnder > td {
         <td>Age</td>
         <td>salary</td>
     </tr>
+
+    {{pass}}
     {{for i in rows:}}
 <tr class="spaceUnder">
     <td><a href="{{=URL('default','view_user',args=[i.last_name])}}">{{=i.first_name}}</a></td>

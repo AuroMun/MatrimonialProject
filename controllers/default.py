@@ -29,9 +29,15 @@ def index():
         if form.process().accepted:
             redirect(URL('search'))
     """
-    if auth.user: redirect(URL('user/profile'))
-    return dict(form=auth())
+    if auth.user:
+        redirect(URL('user/profile'))
+    else:
+        redirect(URL('user/login'))
+    return dict()
 
+def notfound():
+    return dict()
+    
 @auth.requires_login()
 def search():
     form = crud.create(db.find)
@@ -42,9 +48,9 @@ def search():
 @auth.requires_login()
 def result():
     q1 = db.auth_user.sex==request.vars.sex
-    amin = db.auth_user.age > request.vars.minimum_age
-    amax = db.auth_user.age < request.vars.maximum_age
-    sal = db.auth_user.salary > request.vars.minimum_salary
+    amin = db.auth_user.age >= request.vars.minimum_age
+    amax = db.auth_user.age <= request.vars.maximum_age
+    sal = db.auth_user.salary >= request.vars.minimum_salary
     rows=db(q1 & amin & amax & sal).select(db.auth_user.first_name, db.auth_user.last_name, db.auth_user.age, db.auth_user.salary)
     return dict(rows=rows)
     #return dict(sex=request.vars.sex)
