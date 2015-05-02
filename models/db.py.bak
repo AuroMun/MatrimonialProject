@@ -61,9 +61,9 @@ auth.settings.extra_fields['auth_user']= [
 
 db.define_table('find',
                 Field('sex',requires=IS_IN_SET(['Male','Female','Other'])),
-                Field('minimum_age','integer'),
-                Field('maximum_age','integer'),
-                Field('minimum_salary','integer'))
+                Field('minimum_age','integer',requires = [IS_NOT_EMPTY(),IS_INT_IN_RANGE(18,100)]),
+                Field('maximum_age','integer',requires = [IS_NOT_EMPTY(),IS_INT_IN_RANGE(18,100)]),
+                Field('minimum_salary','integer',requires = IS_NOT_EMPTY()))
 
 db.define_table('messages',
                 Field('me',readable=False,writable=False),
