@@ -41,7 +41,9 @@ response.menu += [
 response.menu += [
     (T('Outbox'),False, URL('default', 'outbox'),[])
 ]
-
+response.menu += [
+    (T('Recommend'),False, URL('default', 'lucky'),[])
+]
 DEVELOPMENT_MENU = False
 
 #########################################################################

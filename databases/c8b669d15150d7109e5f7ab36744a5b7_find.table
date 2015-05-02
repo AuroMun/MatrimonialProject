@@ -13,14 +13,14 @@ p6
 I3
 sS'sql'
 p7
-S'CHAR(512)'
+S'INTEGER'
 p8
 sS'notnull'
 p9
 I00
 sS'type'
 p10
-S'string'
+S'integer'
 p11
 ssS'minimum salary'
 p12
@@ -72,7 +72,7 @@ I00
 sg6
 I5
 sg7
-S'CHAR(512)'
+S'INTEGER'
 p28
 sg9
 I00
@@ -104,7 +104,7 @@ I00
 sg6
 I4
 sg7
-S'CHAR(512)'
+S'INTEGER'
 p34
 sg9
 I00
@@ -125,5 +125,6 @@ p37
 sg9
 I00
 sg10
-g11
+S'string'
+p38
 ss.

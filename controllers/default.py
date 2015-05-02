@@ -1,34 +1,8 @@
 # -*- coding: utf-8 -*-
 # this file is released under public domain and you can use without limitations
 
-#########################################################################
-## This is a sample controller
-## - index is the default action of any application
-## - user is required for authentication and authorization
-## - download is for downloading files uploaded in the db (does streaming)
-## - api is an example of Hypermedia API support and access control
-#########################################################################
 
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
-    """
-    """
-    response.flash = T("Welcome to web2py!")
-    form = SQLFORM(db.users)
-    if form.process().accepted:
-        response.flash("Registered!")
-    return dict(message=T('Hello World'), form=form)
-    """
-    """
-    if request.args(0)=='login':
-        if form.process().accepted:
-            redirect(URL('search'))
-    """
     if auth.user:
         redirect(URL('user/profile'))
     else:
@@ -37,7 +11,19 @@ def index():
 
 def notfound():
     return dict()
-    
+
+@auth.requires_login()
+def lucky():
+    if auth.user.sex=="Female":
+        sex="Male"
+    else:
+        sex="Female"
+    minimum_age=int(auth.user.age)-10
+    maximum_age=int(auth.user.age)+10
+    minimum_salary=int(auth.user.salary)/2
+
+    redirect(URL('default', 'result', vars={'sex': sex, 'minimum_age': minimum_age, 'maximum_age': maximum_age, 'minimum_salary': minimum_salary}))
+
 @auth.requires_login()
 def search():
     form = crud.create(db.find)
@@ -61,30 +47,30 @@ def view_users():
 
 @auth.requires_login()
 def view_user():
-    user = db(db.auth_user.last_name == request.args[0]).select()
+    user = db(db.auth_user.first_name == request.args[0]).select()
     return dict(user = user)
 
 def message():
-    db.messages.me.default=auth.user.last_name
+    db.messages.me.default=auth.user.first_name
     db.messages.dest.default=request.args[0]
     db.messages.sent_on.default=request.now
     form=crud.create(db.messages)
-    q1=db.messages.me==auth.user.last_name
+    q1=db.messages.me==auth.user.first_name
     q2=db.messages.dest==request.args[0]
     q3=db.messages.me==request.args[0]
-    q4=db.messages.dest==auth.user.last_name
+    q4=db.messages.dest==auth.user.first_name
     prev=db(q1&q2 | q3&q4).select(orderby=db.messages.sent_on,limitby=(0,10))
     return locals()
 
 @auth.requires_login()
 def inbox():
-    q1=db.messages.dest==auth.user.last_name
+    q1=db.messages.dest==auth.user.first_name
     one=db(q1).select(db.messages.me,distinct=True,orderby=db.messages.sent_on)
     return locals()
 
 @auth.requires_login()
 def outbox():
-    q1=db.messages.me==auth.user.last_name
+    q1=db.messages.me==auth.user.first_name
     one=db(q1).select(db.messages.dest,distinct=True,orderby=db.messages.sent_on)
     return locals()
 

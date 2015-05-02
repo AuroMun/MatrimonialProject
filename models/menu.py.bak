@@ -39,7 +39,7 @@ response.menu += [
 ]
 
 response.menu += [
-    (T('Inbox'),False, URL('default', 'outbox'),[])
+    (T('Outbox'),False, URL('default', 'outbox'),[])
 ]
 
 DEVELOPMENT_MENU = False

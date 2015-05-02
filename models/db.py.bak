@@ -53,21 +53,21 @@ auth.settings.extra_fields['auth_user']= [
   Field('phone', 'string',requires = IS_NOT_EMPTY()),
   Field('photo','upload',uploadfield="myblob",requires = IS_NOT_EMPTY()),
   Field('myblob','blob',required = IS_NOT_EMPTY()),
-  Field('age',requires = IS_NOT_EMPTY()),
-  Field('salary',requires = IS_NOT_EMPTY()),
+  Field('age', 'integer',requires = IS_NOT_EMPTY()),
+  Field('salary', 'integer', requires = IS_NOT_EMPTY()),
   Field('About_Myself','text')]
 #db.auth.auth_user.city.requires = IS_NOT_EMPTY()
 #auth.settings.actions_disabled.append('register')
 
-db.define_table('find', 
+db.define_table('find',
                 Field('sex',requires=IS_IN_SET(['Male','Female','Other'])),
-                Field('minimum_age'),
-                Field('maximum_age'),
-                Field('minimum_salary'))
+                Field('minimum_age','integer'),
+                Field('maximum_age','integer'),
+                Field('minimum_salary','integer'))
 
 db.define_table('messages',
                 Field('me',readable=False,writable=False),
-                Field('to',readable=False,writable=False),
+                Field('dest',readable=False,writable=False),
                 Field('sent_on','datetime',readable=False,writable=False),
                 Field('body','text'))
 
