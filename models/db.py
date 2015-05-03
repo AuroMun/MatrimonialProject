@@ -50,11 +50,13 @@ auth.settings.extra_fields['auth_user']= [
   Field('address', 'string',requires = IS_NOT_EMPTY()),
   Field('city', 'string',requires = IS_NOT_EMPTY()),
   Field('zip', 'string',requires = IS_NOT_EMPTY()),
-  Field('phone', 'string',requires = IS_NOT_EMPTY()),
+  Field('phone', 'string',requires = [IS_NOT_EMPTY(),IS_MATCH('\d{10}')]),
   Field('photo','upload',uploadfield="myblob",requires = IS_NOT_EMPTY()),
   Field('myblob','blob',required = IS_NOT_EMPTY()),
   Field('age', 'integer',requires = IS_NOT_EMPTY()),
+  Field('height','integer',requires = IS_NOT_EMPTY()),
   Field('salary', 'integer', requires = IS_NOT_EMPTY()),
+  Field('education','text',requires = IS_NOT_EMPTY()),
   Field('About_Myself','text')]
 #db.auth.auth_user.city.requires = IS_NOT_EMPTY()
 #auth.settings.actions_disabled.append('register')

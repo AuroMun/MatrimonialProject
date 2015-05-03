@@ -5,9 +5,8 @@
 ## Customize your APP title, subtitle and menus here
 #########################################################################
 
-response.logo = A(B('web',SPAN(2),'py'),XML('&trade;&nbsp;'),
-                  _class="brand",_href="http://www.web2py.com/")
-response.title = request.application.replace('_',' ').title()
+response.logo = H1("MySoulMate",_style="color:#F0F0F0;padding-left:0.3em")
+response.title = "My Soul Mate"
 response.subtitle = ''
 
 ## read more at http://dev.w3.org/html5/markup/meta.name.html
@@ -17,6 +16,7 @@ response.meta.generator = 'Web2py Web Framework'
 
 ## your http://google.com/analytics id
 response.google_analytics_id = None
+
 
 #########################################################################
 ## this is the main application menu add/remove items as required

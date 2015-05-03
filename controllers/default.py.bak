@@ -37,7 +37,7 @@ def result():
     amin = db.auth_user.age >= request.vars.minimum_age
     amax = db.auth_user.age <= request.vars.maximum_age
     sal = db.auth_user.salary >= request.vars.minimum_salary
-    rows=db(q1 & amin & amax & sal).select(db.auth_user.id,db.auth_user.first_name, db.auth_user.last_name, db.auth_user.age, db.auth_user.salary)
+    rows=db(q1 & amin & amax & sal).select(db.auth_user.photo,db.auth_user.id,db.auth_user.first_name, db.auth_user.last_name, db.auth_user.age, db.auth_user.salary)
     return dict(rows=rows)
     #return dict(sex=request.vars.sex)
     
@@ -75,7 +75,7 @@ def inbox():
 @auth.requires_login()
 def outbox():
     q1=db.messages.me==auth.user.id
-    one=db(q1).select(db.messages.dest,distinct=True,orderby=db.messages.sent_on)
+    one=db(q1).select(db.messages.dest,db.messages.dname,distinct=True,orderby=db.messages.sent_on)
     return locals()
 
 def user():

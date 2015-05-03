@@ -4,28 +4,38 @@
 -->
 <style>
 tr.spaceUnder > td {
-   padding-bottom:1em;
+   padding-top:1.5em;
+   padding-left:1.5em;
 }
 </style>
     {{if len(rows)==0:}}
     {{=redirect(URL('notfound.html'))}}
     {{pass}}
 
-<table style="font-size:200%; width:60%;">
+    <!--
     <tr class="spaceUnder">
         <td>First Name</td>
         <td>Last Name</td>
         <td>Age</td>
         <td>salary</td>
     </tr>
-
-    
+    -->
     {{for i in rows:}}
-<tr class="spaceUnder">
-    <td><a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}}</a></td>
-    <td><a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.last_name}}</a></td>
-    <td>{{=i.age}}</td>
-    <td>{{=i.salary}}</td>
-</tr>
+<table style="font-size:200%; width:60%;background: #f0f0f0;">
+    <tr class="spaceUnder">
+        <td style="width:20%"><img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:100%"></td>
+        <td>
+        <table>
+        <tr>
+        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}} </a>
+        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.last_name}}<br><br></a>
+        </tr>
+        <tr>Age: {{=i.age}} <br><br></tr>
+        <tr>Salary: {{=i.salary}}<br><br></tr>
+        <tr>City: {{=i.city}}<br><br></tr>
+        </table>
+        </td>
+    </tr>
+    </table>
+    <hr>
     {{pass}}
-</table>

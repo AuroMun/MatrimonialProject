@@ -8,16 +8,18 @@
     </div>
     </td>
     <td>
-<div style="font-size:200%;line-height:120%">
-First Name: {{=i.first_name}} </br> </br>
-Last Name: {{=i.last_name}} </br> </br>
-Email: {{=i.email}} </br> </br>
-Sex: {{=i.sex}} </br> </br>
-City: {{=i.city}} </br> </br>
-Age: {{=i.age}} </br> </br>
-Salary: {{=i.salary}} </br> </br>
-About Me: {{=i.About_Myself}} </br> </br>
-<button onclick='window.location="{{=URL('default','message',args=[i.first_name])}}"'>
+<div style="font-size:200%;line-height:200%;padding-left:3em">
+First Name: {{=i.first_name}} </br>
+Last Name: {{=i.last_name}} </br>
+Email: {{=i.email}} </br>
+Sex: {{=i.sex}} </br>
+City: {{=i.city}} </br>
+Age: {{=i.age}} </br>
+Height: {{=i.height}} cm<br>
+Salary: {{=i.salary}} </br>
+Education: {{=i.education}} <br>
+About Me: {{=i.About_Myself}} </br>
+<button onclick='window.location="{{=URL('default','message',args=[i.id])}}"'>
     Message
 </button>
 </div>

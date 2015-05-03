@@ -37,7 +37,7 @@ def result():
     amin = db.auth_user.age >= request.vars.minimum_age
     amax = db.auth_user.age <= request.vars.maximum_age
     sal = db.auth_user.salary >= request.vars.minimum_salary
-    rows=db(q1 & amin & amax & sal).select(db.auth_user.id,db.auth_user.first_name, db.auth_user.last_name, db.auth_user.age, db.auth_user.salary)
+    rows=db(q1 & amin & amax & sal).select(db.auth_user.photo,db.auth_user.id,db.auth_user.first_name, db.auth_user.last_name, db.auth_user.age, db.auth_user.salary,db.auth_user.city)
     return dict(rows=rows)
     #return dict(sex=request.vars.sex)
     
