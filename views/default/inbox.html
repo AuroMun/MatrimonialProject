@@ -2,7 +2,7 @@
 <table style="width:60%">
     {{for i in one:}}
     <tr>
-        <td style="width:50%;background: #f0f0f0; margin-bottom: 5px; padding: 8px;"><a href="{{=URL('default','view_user',args=[i.me])}}">{{=i.me}}</a></td>
+        <td style="width:50%;background: #f0f0f0; margin-bottom: 5px; padding: 8px;"><a href="{{=URL('default','view_user',args=[i.me])}}">{{=i.mname}}</a></td>
         <td style="width:50%"><button onclick='window.location="{{=URL('default','message',args=[i.me])}}"'>
         view
         </button></td>

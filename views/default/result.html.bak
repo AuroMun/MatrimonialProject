@@ -11,7 +11,7 @@ tr.spaceUnder > td {
     {{=redirect(URL('notfound.html'))}}
     {{pass}}
 
-<table style="font-size:200%; width:60%; border: 1px">
+<table style="font-size:200%; width:60%;">
     <tr class="spaceUnder">
         <td>First Name</td>
         <td>Last Name</td>

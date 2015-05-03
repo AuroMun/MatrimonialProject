@@ -22,8 +22,8 @@ tr.spaceUnder > td {
     
     {{for i in rows:}}
 <tr class="spaceUnder">
-    <td><a href="{{=URL('default','view_user',args=[i.first_name])}}">{{=i.first_name}}</a></td>
-    <td><a href="{{=URL('default','view_user',args=[i.first_name])}}">{{=i.last_name}}</a></td>
+    <td><a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}}</a></td>
+    <td><a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.last_name}}</a></td>
     <td>{{=i.age}}</td>
     <td>{{=i.salary}}</td>
 </tr>

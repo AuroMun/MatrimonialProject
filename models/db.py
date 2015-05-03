@@ -68,6 +68,8 @@ db.define_table('find',
 db.define_table('messages',
                 Field('me',readable=False,writable=False),
                 Field('dest',readable=False,writable=False),
+                Field('dname',readable=False,writable=False),
+                Field('mname',readable=False,writable=False),
                 Field('sent_on','datetime',readable=False,writable=False),
                 Field('body','text'))
 
