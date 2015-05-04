@@ -4,24 +4,42 @@
 <tr>
     <td style="width:50%">
         <div>
-        <img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:50%"></td>
+        <img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:80%"></td>
     </div>
     </td>
     <td>
-<div style="font-size:200%;line-height:200%;padding-left:3em">
-First Name: {{=i.first_name}} </br>
-Last Name: {{=i.last_name}} </br>
-Email: {{=i.email}} </br>
+<div style="font-size:200%;line-height:160%;padding-left:3em">
+<h1>
+{{=i.first_name+' '+i.last_name}}     </h1>
 Sex: {{=i.sex}} </br>
 City: {{=i.city}} </br>
+Employment: {{=i.employment}} <br>
+<!--
+{{ar=i.age}}
+{{def diff_in_years(born):}}
+            {{today=request.now}}
+            {{ar=today.year-born.year-((today.month,today.day)<(born.month,born.day))}}
+            {{return ar}}
+            {{pass}}
+{{db.auth_user[i.id]=dict(age=diff_in_years(i.DOB))}}
+--> 
 Age: {{=i.age}} </br>
 Height: {{=i.height}} cm<br>
 Salary: {{=i.salary}} </br>
 Education: {{=i.education}} <br>
 About Me: {{=i.About_Myself}} </br>
+{{if ac==True:}}
+{{=XML('Email: '+i.email+'</br>')}}
+{{=XML('Phone Number: '+i.phone+'</br>')}}
+{{pass}}
 <button onclick='window.location="{{=URL('default','message',args=[i.id])}}"'>
     Message
 </button>
+{{if ac==-1:}}
+<button onclick='window.location="{{=URL('default', 'req', args=[i.id])}}"'>
+    Send Request
+</button>
+{{pass}}
 </div>
 </td>
 </tr>

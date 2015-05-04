@@ -1,0 +1,51 @@
+{{extend 'layout.html'}}
+<style>
+tr.spaceUnder > td {
+   padding-top:1.5em;
+   padding-left:1.5em;
+}
+</style>
+
+{{for i in b:}}
+<table style="font-size:200%; width:60%;background: #f0f0f0;">
+    <tr class="spaceUnder">
+        <td style="width:20%"><img src="{{=URL('download',args=[i.auth_user.photo])}}" alt="Picture" style="width:100%"></td>
+        <td>
+        <table>
+        <tr>
+        <a href="{{=URL('default','view_user',args=[i.auth_user.id])}}">{{=i.auth_user.first_name}} {{=i.auth_user.last_name}}</a> <br> <br>
+        </tr>
+        <tr>Age: {{=i.auth_user.age}} <br><br></tr>
+        <tr>Salary: {{=i.auth_user.salary}}<br><br></tr>
+            <tr>Height: {{=i.auth_user.height}} cm<br><br></tr>
+                {{if i.details.accepted==False:}}
+            <tr><button onclick='window.location="{{=URL('default', 'acc', args=[i.auth_user.id])}}"'>Confirm</button><br><br></tr>
+     {{pass}}
+        </table>
+        </td>
+    </tr>
+    </table>
+    <hr>
+    {{pass}}
+{{for i in c:}}
+<table style="font-size:200%; width:60%;background: #f0f0f0;">
+    <tr class="spaceUnder">
+        <td style="width:20%"><img src="{{=URL('download',args=[i.auth_user.photo])}}" alt="Picture" style="width:100%"></td>
+        <td>
+        <table>
+        <tr>
+        <a href="{{=URL('default','view_user',args=[i.auth_user.id])}}">{{=i.auth_user.first_name}} {{=i.auth_user.last_name}}</a> <br> <br>
+        </tr>
+        <tr>Age: {{=i.auth_user.age}} <br><br></tr>
+        <tr>Salary: {{=i.auth_user.salary}}<br><br></tr>
+            <tr>Height: {{=i.auth_user.height}} cm<br><br></tr>
+                {{if i.details.accepted==False:}}
+        <tr>Request pending<br><br></tr>
+     {{pass}}
+        </table>
+        </td>
+    </tr>
+    </table>
+    <hr>
+    {{pass}}
+</h2>

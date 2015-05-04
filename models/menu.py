@@ -6,7 +6,7 @@
 #########################################################################
 
 response.logo = H1("MySoulMate",_style="color:#F0F0F0;padding-left:0.3em")
-response.title = "My Soul Mate"
+response.title = ""
 response.subtitle = ''
 
 ## read more at http://dev.w3.org/html5/markup/meta.name.html
@@ -43,6 +43,9 @@ response.menu += [
 ]
 response.menu += [
     (T('Recommend'),False, URL('default', 'lucky'),[])
+]
+response.menu += [
+    (T('Friends'),False, URL('default', 'friends'),[])
 ]
 DEVELOPMENT_MENU = False
 

@@ -8,9 +8,7 @@ tr.spaceUnder > td {
    padding-left:1.5em;
 }
 </style>
-    {{if len(rows)==0:}}
-    {{=redirect(URL('notfound.html'))}}
-    {{pass}}
+    
 
     <!--
     <tr class="spaceUnder">
@@ -23,16 +21,15 @@ tr.spaceUnder > td {
     {{for i in rows:}}
 <table style="font-size:200%; width:60%;background: #f0f0f0;">
     <tr class="spaceUnder">
-        <td style="width:20%"><img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:80%"></td>
+        <td style="width:20%"><img src="{{=URL('download',args=[i.photo])}}" alt="Picture" style="width:100%"></td>
         <td>
         <table>
         <tr>
-        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}} </a>
-        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.last_name}}<br><br></a>
+        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}} {{=i.last_name}}</a> <br> <br>
         </tr>
         <tr>Age: {{=i.age}} <br><br></tr>
         <tr>Salary: {{=i.salary}}<br><br></tr>
-        <tr>City: {{=i.city}}<br><br></tr>
+        <tr>Height: {{=i.height}} cm<br><br></tr>
         </table>
         </td>
     </tr>

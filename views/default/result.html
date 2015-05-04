@@ -27,12 +27,11 @@ tr.spaceUnder > td {
         <td>
         <table>
         <tr>
-        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}} </a>
-        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.last_name}}<br><br></a>
+        <a href="{{=URL('default','view_user',args=[i.id])}}">{{=i.first_name}} {{=i.last_name}}</a> <br> <br>
         </tr>
         <tr>Age: {{=i.age}} <br><br></tr>
         <tr>Salary: {{=i.salary}}<br><br></tr>
-        <tr>City: {{=i.city}}<br><br></tr>
+        <tr>Height: {{=i.height}} cm<br><br></tr>
         </table>
         </td>
     </tr>
