@@ -150,7 +150,8 @@ def user():
     to decorate functions that need access control
     """
     if request.args[0]== 'profile':
-        db.auth_user[auth.user.id]=dict(age=diff_in_years(auth.user.DOB))
+        if auth.user:
+            db.auth_user[auth.user.id]=dict(age=diff_in_years(auth.user.DOB))
     return dict(form=auth())
 
 

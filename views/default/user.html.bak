@@ -1,6 +1,10 @@
 {{extend 'layout.html'}}
-
 <h2>{{=T( request.args(0).replace('_',' ').capitalize() )}}</h2>
+<style>
+body{
+    background: url("{{=URL('static', '_2.9.12/side.png')}}");
+}
+</style>
 <div id="web2py_user_form">
 {{
 if request.args(0)=='login' and not session.auth_2_factor_user:
@@ -9,9 +13,6 @@ if request.args(0)=='login' and not session.auth_2_factor_user:
     pass
     if not 'request_reset_password' in auth.settings.actions_disabled:
         form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='btn')
-    pass
-    if form.process.accepted():
-        redirect(URL('user/profile'))
     pass
 pass
 =form

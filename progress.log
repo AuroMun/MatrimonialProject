@@ -741,3 +741,50 @@
 [2015-05-04 11:14:11] EDIT MatrimonialProject/controllers/default.py: -1
 [2015-05-04 11:15:41] EDIT MatrimonialProject/models/db.py: 0
 [2015-05-04 11:18:23] EDIT MatrimonialProject/controllers/default.py: 0
+[2015-05-04 11:42:48] EDIT MatrimonialProject/controllers/default.py: 1
+[2015-05-04 12:27:15] EDIT MatrimonialProject/views/default/outbox.html: 0
+[2015-05-04 13:46:52] EDIT MatrimonialProject/controllers/default.py: 0
+[2015-05-05 10:26:35] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/background.jpeg: 152
+[2015-05-05 10:27:13] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/images/bag.jpeg: 152
+[2015-05-05 10:28:33] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/bag.jpeg: 219
+[2015-05-05 10:34:48] EDIT MatrimonialProject/views/default/user.html: 1
+[2015-05-05 10:36:40] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 10:37:00] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 10:37:31] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 10:38:10] EDIT MatrimonialProject/views/layout.html: 0
+[2015-05-05 10:39:07] EDIT MatrimonialProject/views/default/user.html: 5
+[2015-05-05 10:39:26] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 10:39:41] EDIT MatrimonialProject/views/default/user.html: 1
+[2015-05-05 10:39:50] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 10:40:07] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 10:41:44] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:28:58] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 440
+[2015-05-05 12:32:09] EDIT MatrimonialProject/views/default/user.html: -1
+[2015-05-05 12:33:35] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:34:14] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 4618
+[2015-05-05 12:34:44] DELETE MatrimonialProject/static/side.jpg: -1
+[2015-05-05 12:35:02] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 4618
+[2015-05-05 12:35:16] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:35:31] EDIT MatrimonialProject/views/default/user.html: -1
+[2015-05-05 12:36:02] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:36:27] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:36:39] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:36:44] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:37:08] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:37:44] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:38:06] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:39:37] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.png: 4055
+[2015-05-05 12:39:46] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:42:34] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:43:03] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:43:23] EDIT MatrimonialProject/views/default/user.html: 1
+[2015-05-05 12:44:38] EDIT MatrimonialProject/views/default/user.html: -1
+[2015-05-05 12:48:36] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.png: 3011
+[2015-05-05 12:48:45] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 12:59:55] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 500
+[2015-05-05 13:00:13] EDIT MatrimonialProject/views/default/user.html: 0
+[2015-05-05 13:03:50] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 240
+[2015-05-05 13:05:07] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 229
+[2015-05-05 13:05:49] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 269
+[2015-05-05 13:08:25] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 269
+[2015-05-05 13:09:29] UPLOAD C:/Users/Rishith Reddy/Documents/web2py/applications/MatrimonialProject/static/side.jpg: 269
